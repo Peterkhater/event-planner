@@ -1,0 +1,302 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{%static 'css/home.css'%}">
+{% endblock css %}
+
+{% block main %}
+<div id="carouselExampleIndicators" class="carousel slide vh-lg-100" data-ride="carousel" data-interval="">
+    <div class="carousel-text"><p>Your Special Day<br>
+        With Special Events</p><br><br class="d-md-none"><br class="d-md-none"><br class="d-md-none"> <br class="d-md-none"> <br class="d-md-none"> <br class="d-md-none"> <a class="startPlanning ">Start Planning</a></div>
+    <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <!-- <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="3"></li> -->
+    </ol>
+    <div class="carousel-inner" style="height:100%;">
+        <div class="carousel-item active" data-interval="" style="height:100%;">
+            <video class="d-block w-100" style="height: 100vh; object-fit: cover;" src="{% static 'images/VID-20250131-WA0005.mp4' %}" autoplay muted loop></video>
+        </div>
+        <!-- </div>
+        <div class="carousel-item active" data-interval="" style="height:100%;">
+            <img class="d-block w-100"  style="height:100%;" src="{%static 'images/carousel2.jpeg'%}" alt="First slide">
+        </div>
+        <div class="carousel-item" data-interval="" style="height:100%;">
+            <img class="d-block w-100" style="height:100%;" src="https://www.powertrafic.fr/wp-content/uploads/2023/04/image-ia-exemple.png" alt="Second slide">
+        </div>
+        <div class="carousel-item" data-interval="" style="height:100%;">
+            <img class="d-block w-100" style="height:100%;" src="https://tse1.mm.bing.net/th?id=OIP.4XB8NF1awQyApnQDDmBmQwHaEo&pid=Api&P=0&h=220" alt="Third slide">
+        </div> -->
+
+        
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+
+<div class="container my-5">
+    <div class="row rounded-lg shadow-lg" style="border: 2px solid #C3B091;">
+
+        <div class="col-lg-2 col-md-4 col-6">
+            <div class="container eashCateCont">
+                <div class="imgcon d-flex justify-content-center align-items-center rounded-circle p-3 mt-2">
+                    <img src="{% static 'images/wedding.webp' %}" class="category_img" alt="">
+                </div>
+                <div class="text_cont">
+                    <p class="fw-bold fs-3 text-center counter" data-target="15">0+</p>
+                    <p class="text-center fw-bold  category">Bride To Be</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-2 col-md-4 col-6">
+            <div class="container eashCateCont">
+                <div class="imgcon d-flex justify-content-center align-items-center rounded-circle p-3 mt-2">
+                    <img src="{% static 'images/bday.webp' %}" class="category_img" alt="">
+                </div>
+                <div class="text_cont">
+                    <p class="fw-bold fs-3 text-center counter" data-target="100">0+</p>
+                    <p class="text-center fw-bold category m-0 mt-4">Birthdays</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-2 col-md-4 col-6">
+            <div class="container eashCateCont">
+                <div class="imgcon d-flex justify-content-center align-items-center rounded-circle p-3 mt-2">
+                    <img src="{% static 'images/newborn-removebg-preview.png' %}" alt="" class="category_img">
+                </div>
+                <div class="text_cont">
+                    <p class="fw-bold fs-3 text-center counter" data-target="50">0+</p>
+                    <p class="text-center fw-bold category">New Born</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-2 col-md-4 col-6">
+            <div class="container eashCateCont">
+                <div class="imgcon d-flex justify-content-center align-items-center rounded-circle p-3 mt-2">
+                    <img src="{% static 'images/bap.png' %}" alt="" class="category_img">
+                </div>
+                <div class="text_cont">
+                    <p class="fw-bold fs-3 text-center counter" data-target="30">0+</p>
+                    <p class="text-center fw-bold category">Baptisms</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-2 col-md-4 col-6">
+            <div class="container eashCateCont">
+                <div class="imgcon d-flex justify-content-center align-items-center rounded-circle p-3 mt-2">
+                    <img src="{% static 'images/th.png' %}" alt="" class="category_img">
+                </div>
+                <div class="text_cont">
+                    <p class="fw-bold fs-3 text-center counter" data-target="30">0+</p>
+                    <p class="text-center fw-bold category">First Communion</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-2 col-md-4 col-6">
+            <div class="container ">
+                <div class="imgcon d-flex justify-content-center align-items-center rounded-circle p-3 mt-2">
+                    <img src="{% static 'images/animation.png' %}" alt="" class="category_img">
+                </div>
+                <div class="text_cont">
+                    <p class="fw-bold fs-3 text-center counter " data-target="100">0+</p>
+                    <p class="text-center fw-bold category">Animation</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="container mt-5">
+    <div class="row align-items-center">
+        <div class="col-md-6">
+            <div class="image-container">
+                <img src="{%static 'images/th (1).jpeg'%}" alt="Background" class="background-image">
+                <img src="{%static 'images/team.jpeg'%}" alt="Elida khater & Angelina Kassis" class="img-fluid rounded">
+            </div>
+        </div>
+        <div class="col-md-6 text-center text-md-start mt-3">
+            <h2 class="h2About">Special Events Lebanon, Where All Your Dreams Come to Reality!</h2>
+            <p>Make.A.Wish & Angelina.Art.Spot Lebanon, <span style="background-color: #E6BE8A;">established in 2023</span>, is a premier event planning and decoration service based in West Beqaa, Kherbet Qanafar, Lebanon. We are dedicated to crafting unforgettable experiences. Founded by Elida Khater and Angelina Kassis, our team is passionate about bringing dream events to life with creativity and precision. Our talented staff—Elie Khater, Joe Abboud, Yousif Chakrina, and Clarita Kassis—work tirelessly to ensure every detail is perfect. Behind the scenes, Peter Khater, our skilled developer, enhances our digital presence. At Make.A.Wish, we transform visions into reality, making every occasion truly special.</p>
+            <div class="d-flex justify-content-center justify-content-md-start gap-3 mt-3">
+                <button class="custom-btn">Our Services</button>
+                <button class="custom-btn2"><a style="color: inherit; text-decoration: none;" href="https://wa.me/+96179320143">Contact Us</a></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container my-5">
+    <div class="special-section">
+        <p class="small-text">Who’s Next?</p>
+        <h2 class="section-title">Let’s Make Your Next Event Special</h2>
+        <p class="section-description">
+            At Special Events, we design unique, elegant, and unforgettable experiences tailored to your vision. Every occasion should be extraordinary, leaving lasting memories for your guests and a cherished experience for you.
+        </p>
+        <div class="button-group">
+            <button class="custom-btn pink-btn">Start Planning Now</button>
+            <button class="custom-btn dark-btn c_b_2">Contact Us</button>
+        </div>
+    </div>
+</div>
+<div class="center">
+    <div class="container text-dark">
+      <h2 class="gallery_title text-center">Capturing Unforgettable Moments</h2>
+    <p class="gallery_description text-center">
+        Dive into our visual showcase, showcasing a carefully curated collection of remarkable events. Witness the enchantment we bring to every occasion through breathtaking images. Experience the essence of Special Events — where each photo narrates a one-of-a-kind story.
+    </p>
+    </div>
+    <div class="carousel">
+      <div class="controls">
+        <button type="button" class="btn" onclick="moveLeft()">
+          <span class="material-icons-outlined">arrow_back_ios</span>
+        </button>
+        <button type="button" class="btn" onclick="playPause()">
+          <span class="material-icons-outlined icon">pause</span>
+        </button>
+        <button type="button" class="btn" onclick="moveRight()">
+          <span class="material-icons-outlined">arrow_forward_ios</span>
+        </button>
+      </div>
+      <div class="slide-center">
+        <div class="slider">
+          <div class="slide1 active">
+            <img src="{%static 'images/team.jpeg'%}" alt="" />
+            <div class="desc">Image 1</div>
+          </div>
+          <div class="slide1">
+            <img src="{%static 'images/team.jpeg'%}" alt="" />
+            <div class="desc">Image 2</div>
+          </div>
+          <div class="slide1">
+            <img src="{%static 'images/team.jpeg'%}" alt="" />
+            <div class="desc">Image 3</div>
+          </div>
+          <div class="slide1">
+            <img src="{%static 'images/team.jpeg'%}" alt="" />
+            <div class="desc">Image 4</div>
+          </div>
+          <div class="slide1">
+            <img src="{%static 'images/team.jpeg'%}" alt="" />
+            <div class="desc">Image 5</div>
+          </div>
+          <div class="slide1">
+            <img src="{%static 'images/team.jpeg'%}" alt="" />
+            <div class="desc">Image 6</div>
+          </div>
+          <div class="slide1">
+            <img src="{%static 'images/team.jpeg'%}" alt="" />
+            <div class="desc">Image 7</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="video2Container rounded-lg container mt-5 d-flex justify-content-center align-item-center" >
+    <video class="d-block w-100 rounded-lg video2" src="{% static 'images/video1.mp4' %}" autoplay muted loop></video>
+</div>
+
+<div class="whatWeDoSection">
+    <div class="container-fluid">
+        <div class="whatWeDoTextContainer">
+            <h2 class="whatWeDoTitle text-center pt-5">We Do It All!</h2>
+            <p class="whatWeDoDescription text-center">Unforgettable events tailored just for you. From concept to execution, we make every detail count.</p>
+        </div>
+
+        <div class="container whatWeDoListContainer mt-5">
+
+            <div class="whatWeDoEashCategory shadow-lg">
+                <div class="whatWeDoImgContainer">
+                    <img class="WhatWeDoImg" src="{%static 'images/bday.webp'%}" alt="">
+                </div>
+                <div class="whatwedoText">
+                    <p class="text-center">Birthday</p>
+                </div>
+            </div>
+
+            <div class="whatWeDoEashCategory shadow-lg">
+                <div class="whatWeDoImgContainer">
+                    <img class="WhatWeDoImg" src="{%static 'images/bday.webp'%}" alt="">
+                </div>
+                <div class="whatwedoText">
+                    <p class="text-center">Birthday</p>
+                </div>
+            </div>
+
+
+            <div class="whatWeDoEashCategory shadow-lg">
+                <div class="whatWeDoImgContainer">
+                    <img class="WhatWeDoImg" src="{%static 'images/bday.webp'%}" alt="">
+                </div>
+                <div class="whatwedoText">
+                    <p class="text-center">Birthday</p>
+                </div>
+            </div>
+
+
+            <div class="whatWeDoEashCategory shadow-lg">
+                <div class="whatWeDoImgContainer">
+                    <img class="WhatWeDoImg" src="{%static 'images/bday.webp'%}" alt="">
+                </div>
+                <div class="whatwedoText">
+                    <p class="text-center">Birthday</p>
+                </div>
+            </div>
+
+
+            <div class="whatWeDoEashCategory shadow-lg">
+                <div class="whatWeDoImgContainer">
+                    <img class="WhatWeDoImg" src="{%static 'images/bday.webp'%}" alt="">
+                </div>
+                <div class="whatwedoText">
+                    <p class="text-center">Birthday</p>
+                </div>
+            </div>
+
+
+
+            <div class="whatWeDoEashCategory shadow-lg">
+                <div class="whatWeDoImgContainer">
+                    <img class="WhatWeDoImg" src="{%static 'images/bday.webp'%}" alt="">
+                </div>
+                <div class="whatwedoText">
+                    <p class="text-center">Birthday</p>
+                </div>
+            </div>
+
+
+            <div class="whatWeDoEashCategory shadow-lg">
+                <div class="whatWeDoImgContainer">
+                    <img class="WhatWeDoImg" src="{%static 'images/bday.webp'%}" alt="">
+                </div>
+                <div class="whatwedoText">
+                    <p class="text-center">Birthday</p>
+                </div>
+            </div>
+
+        </div>
+        <div class="d-flex justify-content-center justify-content-center  mt-5">
+            <button class="custom-btn2 mb-5"><a style="color: inherit; text-decoration: none;" href="https://wa.me/+96179320143">Contact Us</a></button>
+        </div>
+    </div>
+</div>
+{% endblock main %}
+
+{%block js%}
+<script src="{%static 'js/home.js'%}"></script>
+
+{%endblock js%}
