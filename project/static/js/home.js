@@ -69,3 +69,6 @@ var i = 0;
         pause = false;
       }
     }
+
+
+    
