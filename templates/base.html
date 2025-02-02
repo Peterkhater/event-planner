@@ -102,8 +102,8 @@
     </svg>
 </div> 
 
-      <nav class="navbar navbar-expand-custom navbar-mainbg">
-        <a class="navbar-brand navbar-logo" href="#"><img src="{%static 'images/logo.png'%}" alt="" height="60px" width="60px"></a>
+      <nav class="navbar navbar-expand-custom navbar-mainbg p-0">
+        <a class="navbar-brand navbar-logo py-0" href="#"><img src="{%static 'images/logo.png'%}" alt="" height="60px" width="60px"></a>
         <button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <i class="fas fa-bars text-white"></i>
         </button>
@@ -121,7 +121,7 @@
                     <a class="nav-link" href="{% url "home" %}#weDoItAllId"> <i class="fa-solid fa-rectangle-list"></i> Our Services</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fa-regular fa-image"></i> Gallery</a>
+                    <a class="nav-link" href="{% url "home" %}#weDoItAllId"><i class="fa-regular fa-image"></i> Gallery</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{% url "home" %}#Contact__Us"><i class="fa-solid fa-square-phone"></i> Contact Us</a>
@@ -171,9 +171,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-8 col-sm-6 col-xs-12">
-          <p class="copyright-text">Copyright &copy; 2017 All Rights Reserved by 
-       <a href="#">Scanfcode</a>.
-          </p>
+          <p class="copyright-text">Copyright &copy; 2024 <span id="toYear"> <span> </p>
         </div>
 
         <div class="col-md-4 col-sm-6 col-xs-12">

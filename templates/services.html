@@ -33,11 +33,16 @@
     <p class="text-center" style="color: white; font-size: small;">
         Home | Gallery</p></a>
 </div>
+<div class="container d-flex justify-content-center align-item-center">
+    <a href="https://wa.me/+96179320143" style="text-decoration:none; color:inherit">
+        <button class="btn btn-dark mt-5 text-center">Customize your event now</button>
+    </a>
+</div>
 <section class="gallery">
     <ul class="images">
         {% for image in category_images %}
             <li class="card">
-                <img src="{{ image.image.url }}" alt="{{ category.name }}"
+                <img src="{{ image.image.url }}" alt="Beautiful {{ category.name }} celebration decor, event setup"
                      onclick="showLightBox('{{ image.photoGrapher }}', '{{ image.image.url }}')">
                 <div class="details">
                     <div class="photographer">
@@ -53,7 +58,7 @@
             <p>No images available for this category.</p>
         {% endfor %}
     </ul>
-    <button class="load-more">Load More</button>
+   <a href="https://wa.me/+96179320143" style="text-decoration:none; color:inherit"> <button class="load-more">Contact Us</button> </a>
 </section>
 
 {% endblock main %}

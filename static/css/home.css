@@ -526,9 +526,11 @@
     border: 10px solid #ccc;
     text-decoration: none;
   }
- /* .card:hover {
-    transform: rotate(0);
-  }  */
+ .card:hover {
+    /* transform: rotate(0); */
+    text-decoration: none;
+    color: white;
+  } 
   
   .card h1 {
     margin: 0;

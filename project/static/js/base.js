@@ -94,3 +94,14 @@ document.addEventListener('DOMContentLoaded', function() {
         document.querySelector(".pl").style.display = "none";  
     }, 2000); 
 });
+
+
+const getCurrentYear=()=>{
+	const date = new Date()
+	thisyear = date.getFullYear()
+	return thisyear
+}
+
+window.onload=function(){
+	toYear = document.getElementById('toYear').textContent=`-> ${getCurrentYear()} All Rights Reserved by Peter khater`
+}

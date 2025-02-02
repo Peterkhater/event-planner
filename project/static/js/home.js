@@ -57,7 +57,7 @@ var i = 0;
       if (!pause) {
         moveRight();
       }
-    }, 1000);
+    }, 3000);
 
     function playPause() {
       let state = document.querySelector(".icon");

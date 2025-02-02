@@ -88,3 +88,9 @@ jQuery(document).ready(function($){
 // });
 
 
+
+document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(function() {
+        document.querySelector(".pl").style.display = "none";  
+    }, 2000); 
+});

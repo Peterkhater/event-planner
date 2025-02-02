@@ -59,12 +59,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    
 }
 .gallery .images{
     gap: 15px;
     columns: 5 340px;
     margin-top: 40px;
     max-width: 95%;
+    padding-left:0;
 }
 .images .card{
     list-style: none;
@@ -162,11 +164,12 @@ i{
     width: 100%;
     max-width: 600px;
     padding: 20px;
+    max-height: 100%;
     transform: translate(-50%, -50%);
 }
 
 .wrappe .preview-img .img{
-max-height: 65vh;
+max-height: 65%;
 max-width: 90vh;
 }
 
@@ -174,6 +177,7 @@ max-width: 90vh;
 display: flex;
 justify-content: center;
 margin-top: 25px;
+height: 100%;
 }
 
 .preview-img .img img{
