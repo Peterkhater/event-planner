@@ -16,19 +16,17 @@ i {
 	color: #fff;
 }
 .navbar-mainbg{
-	background-color: #5161ce;
-    background-color: #439497;
-    background-color: #79bbbe;
-	background-color: #304f6a; /* Deep Navy Blue */
-	background-color: #6C9BCF ; /* Deep Navy Blue */
-	background-color: #76A7A7 ; /* Deep Navy Blue */
-	background-color: #A3A380 ; /* Deep Navy Blue */
-	background-color: #D8A7B1 ; /* Deep Navy Blue */
 	background-color: #C3B091 ; /* Deep Navy Blue */
+	background-color: #9b9e9f;
     color: white;
 	padding: 0px;
 	
 }
+/* #content {
+    display: none;
+    text-align: center;
+    padding: 20px;
+} */
 #navbarSupportedContent{
 	overflow: hidden;
 	position: relative;
@@ -55,10 +53,8 @@ i {
     position: relative;
 }
 #navbarSupportedContent>ul>li.active>a{
-	color: #5161ce;
-    color: #439497;
-	color: #D8A7B1;
 	color: #C3B091;
+	color: #9b9e9f;
 	background-color: transparent;
 	transition: all 0.7s;
 }
@@ -112,11 +108,8 @@ i {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background-color: #5161ce;
-
-    background-color: #439497;
-	background-color: #D8A7B1;
 	background-color: #C3B091;
+	background-color: #9b9e9f;
 }
 .hori-selector .right:before{
 	bottom: 0;

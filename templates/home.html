@@ -8,29 +8,14 @@
 {% block main %}
 <div id="carouselExampleIndicators" class="carousel slide vh-lg-100" data-ride="carousel" data-interval="">
     <div class="carousel-text"><p>Your Special Day<br>
-        With Special Events</p><br><br class="d-md-none"><br class="d-md-none"><br class="d-md-none"> <br class="d-md-none"> <br class="d-md-none"> <br class="d-md-none"> <a class="startPlanning ">Start Planning</a></div>
+        With Special Events</p><br><br class="d-md-none"><br class="d-md-none"><br class="d-md-none"> <br class="d-md-none"> <br class="d-md-none"> <br class="d-md-none"> <a class="startPlanning" href="{% url "start_plan" %}">Start Planning</a></div>
     <ol class="carousel-indicators">
         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-        <!-- <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="3"></li> -->
     </ol>
     <div class="carousel-inner" style="height:100%;">
         <div class="carousel-item active" data-interval="" style="height:100%;">
-            <video class="d-block w-100" style="height: 100vh; object-fit: cover;" src="{% static 'images/VID-20250131-WA0005.mp4' %}" autoplay muted loop></video>
+            <video class="d-block w-100" style="height: 100vh; object-fit: cover;" src="{% static 'images/VID-20250131-WA0005.mp4' %}" autoplay muted loop playsinline></video>
         </div>
-        <!-- </div>
-        <div class="carousel-item active" data-interval="" style="height:100%;">
-            <img class="d-block w-100"  style="height:100%;" src="{%static 'images/carousel2.jpeg'%}" alt="First slide">
-        </div>
-        <div class="carousel-item" data-interval="" style="height:100%;">
-            <img class="d-block w-100" style="height:100%;" src="https://www.powertrafic.fr/wp-content/uploads/2023/04/image-ia-exemple.png" alt="Second slide">
-        </div>
-        <div class="carousel-item" data-interval="" style="height:100%;">
-            <img class="d-block w-100" style="height:100%;" src="https://tse1.mm.bing.net/th?id=OIP.4XB8NF1awQyApnQDDmBmQwHaEo&pid=Api&P=0&h=220" alt="Third slide">
-        </div> -->
-
-        
     </div>
     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -44,83 +29,29 @@
 
 <div class="container my-5">
     <div class="row rounded-lg shadow-lg" style="border: 2px solid #C3B091;">
+  {% for cat in category %}
+  <div class="col-lg-2 col-md-4 col-6">
+    <div class="container eashCateCont">
+      <div class="imgcon d-flex justify-content-center align-items-center rounded-circle p-3 mt-2">
+        {% if cat.icon and cat.icon.name %}
+          <img src="{{ cat.icon.url }}" class="category_img" alt="{{ cat.name }}">
+        {% else %}
+          <img src="https://via.placeholder.com/150" class="category_img" alt="Placeholder Image">
+        {% endif %}
+      </div>
+      <div class="text_cont">
+        <p class="fw-bold fs-3 text-center counter" data-target="{{ cat.event_count }}">0+</p>
+        <p class="text-center fw-bold category">{{ cat.name }}</p>
+      </div>
+    </div>
+  </div>
+{% endfor %} 
 
-        <div class="col-lg-2 col-md-4 col-6">
-            <div class="container eashCateCont">
-                <div class="imgcon d-flex justify-content-center align-items-center rounded-circle p-3 mt-2">
-                    <img src="{% static 'images/wedding.webp' %}" class="category_img" alt="">
-                </div>
-                <div class="text_cont">
-                    <p class="fw-bold fs-3 text-center counter" data-target="15">0+</p>
-                    <p class="text-center fw-bold  category">Bride To Be</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-2 col-md-4 col-6">
-            <div class="container eashCateCont">
-                <div class="imgcon d-flex justify-content-center align-items-center rounded-circle p-3 mt-2">
-                    <img src="{% static 'images/bday.webp' %}" class="category_img" alt="">
-                </div>
-                <div class="text_cont">
-                    <p class="fw-bold fs-3 text-center counter" data-target="100">0+</p>
-                    <p class="text-center fw-bold category m-0 mt-4">Birthdays</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-2 col-md-4 col-6">
-            <div class="container eashCateCont">
-                <div class="imgcon d-flex justify-content-center align-items-center rounded-circle p-3 mt-2">
-                    <img src="{% static 'images/newborn-removebg-preview.png' %}" alt="" class="category_img">
-                </div>
-                <div class="text_cont">
-                    <p class="fw-bold fs-3 text-center counter" data-target="50">0+</p>
-                    <p class="text-center fw-bold category">New Born</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-2 col-md-4 col-6">
-            <div class="container eashCateCont">
-                <div class="imgcon d-flex justify-content-center align-items-center rounded-circle p-3 mt-2">
-                    <img src="{% static 'images/bap.png' %}" alt="" class="category_img">
-                </div>
-                <div class="text_cont">
-                    <p class="fw-bold fs-3 text-center counter" data-target="30">0+</p>
-                    <p class="text-center fw-bold category">Baptisms</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-2 col-md-4 col-6">
-            <div class="container eashCateCont">
-                <div class="imgcon d-flex justify-content-center align-items-center rounded-circle p-3 mt-2">
-                    <img src="{% static 'images/th.png' %}" alt="" class="category_img">
-                </div>
-                <div class="text_cont">
-                    <p class="fw-bold fs-3 text-center counter" data-target="30">0+</p>
-                    <p class="text-center fw-bold category">First Communion</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-2 col-md-4 col-6">
-            <div class="container ">
-                <div class="imgcon d-flex justify-content-center align-items-center rounded-circle p-3 mt-2">
-                    <img src="{% static 'images/animation.png' %}" alt="" class="category_img">
-                </div>
-                <div class="text_cont">
-                    <p class="fw-bold fs-3 text-center counter " data-target="100">0+</p>
-                    <p class="text-center fw-bold category">Animation</p>
-                </div>
-            </div>
-        </div>
-
+        
     </div>
 </div>
 
-<div class="container mt-5">
+<div class="container my-5">
     <div class="row align-items-center">
         <div class="col-md-6">
             <div class="image-container">
@@ -129,17 +60,17 @@
             </div>
         </div>
         <div class="col-md-6 text-center text-md-start mt-3">
-            <h2 class="h2About">Special Events Lebanon, Where All Your Dreams Come to Reality!</h2>
-            <p>Make.A.Wish & Angelina.Art.Spot Lebanon, <span style="background-color: #E6BE8A;">established in 2023</span>, is a premier event planning and decoration service based in West Beqaa, Kherbet Qanafar, Lebanon. We are dedicated to crafting unforgettable experiences. Founded by Elida Khater and Angelina Kassis, our team is passionate about bringing dream events to life with creativity and precision. Our talented staff—Elie Khater, Joe Abboud, Yousif Chakrina, and Clarita Kassis—work tirelessly to ensure every detail is perfect. Behind the scenes, Peter Khater, our skilled developer, enhances our digital presence. At Make.A.Wish, we transform visions into reality, making every occasion truly special.</p>
+            <h2 class="h2About" id="aboutUsId">Special Events Lebanon, Where All Your Dreams Come to Reality!</h2>
+            <p>Make.A.Wish & Angelina.Art.Spot Lebanon, <span style="background-color: #9b9e9f;">established in 2023</span>, is a premier event planning and decoration service based in West Beqaa, Kherbet Qanafar, Lebanon. We are dedicated to crafting unforgettable experiences. Founded by Elida Khater and Angelina Kassis, our team is passionate about bringing dream events to life with creativity and precision. Our talented staff—Elie Khater, Joe Abboud, Yousif Chakrina, and Clarita Kassis—work tirelessly to ensure every detail is perfect. Behind the scenes, Peter Khater, our skilled developer, enhances our digital presence. At Make.A.Wish, we transform visions into reality, making every occasion truly special.</p>
             <div class="d-flex justify-content-center justify-content-md-start gap-3 mt-3">
-                <button class="custom-btn">Our Services</button>
+                <a href="{% url "home" %}#weDoItAllId" style="color:inherit; text-decoration:none;"><button class="custom-btn">Our Services</button></a>
                 <button class="custom-btn2"><a style="color: inherit; text-decoration: none;" href="https://wa.me/+96179320143">Contact Us</a></button>
             </div>
         </div>
     </div>
 </div>
 
-<div class="container my-5">
+<div class="container my-5" style="margin:50px auto;">
     <div class="special-section">
         <p class="small-text">Who’s Next?</p>
         <h2 class="section-title">Let’s Make Your Next Event Special</h2>
@@ -147,12 +78,12 @@
             At Special Events, we design unique, elegant, and unforgettable experiences tailored to your vision. Every occasion should be extraordinary, leaving lasting memories for your guests and a cherished experience for you.
         </p>
         <div class="button-group">
-            <button class="custom-btn pink-btn">Start Planning Now</button>
+            <a href="{% url 'start_plan' %}" style="text-decoration:none; color:inherit;"><button class="custom-btn pink-btn">Start Planning Now</button></a>
             <button class="custom-btn dark-btn c_b_2">Contact Us</button>
         </div>
     </div>
 </div>
-<div class="center">
+<div class="center my-5">
     <div class="container text-dark">
       <h2 class="gallery_title text-center">Capturing Unforgettable Moments</h2>
     <p class="gallery_description text-center">
@@ -173,127 +104,35 @@
       </div>
       <div class="slide-center">
         <div class="slider">
+        {% for gall in gallery %}
           <div class="slide1 active">
-            <img src="{%static 'images/team.jpeg'%}" alt="" />
-            <div class="desc">Image 1</div>
+            <img src="{{gall.image.url}}" alt="{{gall.photoGrapher}}" />
+            <div class="desc">{{gall.photoGrapher}}</div>
           </div>
-          <div class="slide1">
-            <img src="{%static 'images/team.jpeg'%}" alt="" />
-            <div class="desc">Image 2</div>
-          </div>
-          <div class="slide1">
-            <img src="{%static 'images/team.jpeg'%}" alt="" />
-            <div class="desc">Image 3</div>
-          </div>
-          <div class="slide1">
-            <img src="{%static 'images/team.jpeg'%}" alt="" />
-            <div class="desc">Image 4</div>
-          </div>
-          <div class="slide1">
-            <img src="{%static 'images/team.jpeg'%}" alt="" />
-            <div class="desc">Image 5</div>
-          </div>
-          <div class="slide1">
-            <img src="{%static 'images/team.jpeg'%}" alt="" />
-            <div class="desc">Image 6</div>
-          </div>
-          <div class="slide1">
-            <img src="{%static 'images/team.jpeg'%}" alt="" />
-            <div class="desc">Image 7</div>
-          </div>
+        {% endfor %}
         </div>
       </div>
     </div>
   </div>
 
-  <div class="video2Container rounded-lg container mt-5 d-flex justify-content-center align-item-center" >
+  <div class="video2Container rounded-lg container mt-5 d-flex justify-content-center align-item-center" style="margin-top:70px;">
     <video class="d-block w-100 rounded-lg video2" src="{% static 'images/video1.mp4' %}" autoplay muted loop></video>
 </div>
 
-<div class="whatWeDoSection">
-    <div class="container-fluid">
-        <div class="whatWeDoTextContainer">
-            <h2 class="whatWeDoTitle text-center pt-5">We Do It All!</h2>
-            <p class="whatWeDoDescription text-center">Unforgettable events tailored just for you. From concept to execution, we make every detail count.</p>
-        </div>
+<section class="WhatWeDo container mt-5 bg-light">
+  <h2 class="WhatWeDo-title text-dark" id="weDoItAllId">We Do It All!</h2>
+  <p class="WhatWeDo-subtitle">Unforgettable events tailored just for you. From concept to execution, we make every detail count.</p>
+  
+  <div class="WhatWeDo-grid">
+    {% for cat in category %}
+      <a href="{% url 'service' cat.id %}" class="WhatWeDo-card bg-dark">
+          <img src="{{cat.icon.url}}" alt="{{cat.name}}" class="WhatWeDo-icon">
+          <p class="WhatWeDo-text text-light">{{cat.name}}</p>
+      </a>
+    {% endfor %}
+  </div>
+</section>
 
-        <div class="container whatWeDoListContainer mt-5">
-
-            <div class="whatWeDoEashCategory shadow-lg">
-                <div class="whatWeDoImgContainer">
-                    <img class="WhatWeDoImg" src="{%static 'images/bday.webp'%}" alt="">
-                </div>
-                <div class="whatwedoText">
-                    <p class="text-center">Birthday</p>
-                </div>
-            </div>
-
-            <div class="whatWeDoEashCategory shadow-lg">
-                <div class="whatWeDoImgContainer">
-                    <img class="WhatWeDoImg" src="{%static 'images/bday.webp'%}" alt="">
-                </div>
-                <div class="whatwedoText">
-                    <p class="text-center">Birthday</p>
-                </div>
-            </div>
-
-
-            <div class="whatWeDoEashCategory shadow-lg">
-                <div class="whatWeDoImgContainer">
-                    <img class="WhatWeDoImg" src="{%static 'images/bday.webp'%}" alt="">
-                </div>
-                <div class="whatwedoText">
-                    <p class="text-center">Birthday</p>
-                </div>
-            </div>
-
-
-            <div class="whatWeDoEashCategory shadow-lg">
-                <div class="whatWeDoImgContainer">
-                    <img class="WhatWeDoImg" src="{%static 'images/bday.webp'%}" alt="">
-                </div>
-                <div class="whatwedoText">
-                    <p class="text-center">Birthday</p>
-                </div>
-            </div>
-
-
-            <div class="whatWeDoEashCategory shadow-lg">
-                <div class="whatWeDoImgContainer">
-                    <img class="WhatWeDoImg" src="{%static 'images/bday.webp'%}" alt="">
-                </div>
-                <div class="whatwedoText">
-                    <p class="text-center">Birthday</p>
-                </div>
-            </div>
-
-
-
-            <div class="whatWeDoEashCategory shadow-lg">
-                <div class="whatWeDoImgContainer">
-                    <img class="WhatWeDoImg" src="{%static 'images/bday.webp'%}" alt="">
-                </div>
-                <div class="whatwedoText">
-                    <p class="text-center">Birthday</p>
-                </div>
-            </div>
-
-
-            <div class="whatWeDoEashCategory shadow-lg">
-                <div class="whatWeDoImgContainer">
-                    <img class="WhatWeDoImg" src="{%static 'images/bday.webp'%}" alt="">
-                </div>
-                <div class="whatwedoText">
-                    <p class="text-center">Birthday</p>
-                </div>
-            </div>
-
-        </div>
-        <div class="d-flex justify-content-center justify-content-center  mt-5">
-            <button class="custom-btn2 mb-5"><a style="color: inherit; text-decoration: none;" href="https://wa.me/+96179320143">Contact Us</a></button>
-        </div>
-    </div>
-</div>
 
 <div class="container-fluid">
     <div class="whatWeDoTextContainer">
@@ -302,21 +141,21 @@
     </div>
 
     <section class="cards-wrapper">
-
+      {% for blog in blog %}
         <div class="card-grid-space">
-          <div class="num">01</div>
-          <a class="card" href="" style="--bg-img: url({%static 'images/team.jpeg'%})">
+          {% comment %} <div class="num">01</div> {% endcomment %}
+          <a class="card" href="" style="--bg-img: url({{blog.image.url}})">
             <div>
-              <h1>HTML Syntax</h1>
-              <p>The syntax of a language is how it works. How to actually write it. Learn HTML syntax…</p>
-              <div class="date">6 Oct 2017</div>
-              <div class="tags">
+              <h1>{{blog.title}}</h1>
+              <p>{{blog.description}}</p>
+              <div class="date">{{blog.uploaded_at}}</div>
+              {% comment %} <div class="tags">
                 <div class="tag">HTML</div>
-              </div>
+              </div> {% endcomment %}
             </div>
           </a>
         </div>
-
+        {% endfor %}
       </section>
 </div>
 
@@ -324,6 +163,41 @@
 
 
 
+<div class="container my-5 " id="Contactez_nous" >
+    <div class="row">
+      <!-- Contact Form Section -->
+      <div class="col-md-6 p-4 bg-light contact-form-box ">
+        <h2 class="mb-4" style="color:#333;" id="Contact__Us">Contact Us</h2>
+        <form id="contactForm">
+          <div class="mb-3">
+            <label for="fullName" class="form-label">Name</label>
+            <input type="text" id="fullName" class="form-control contact-input" placeholder="Name" required>
+          </div>
+          <div class="mb-3">
+            <label for="subject" class="form-label">Subject</label>
+            <input type="text" id="subject" class="form-control contact-input" placeholder="Subject" required>
+          </div>
+          <div class="mb-3">
+            <label for="message" class="form-label">Message</label>
+            <textarea id="message" rows="4" class="form-control contact-input" placeholder="Message" required></textarea>
+          </div>
+          <button type="button" class="btn w-100 contact-button" onclick="sendMessage()" id="sendmessageBtn" number="+96179320143">Send Message</button>
+        </form>
+      </div>
+      <!-- Map Section -->
+      <div class="col-md-6 p-0">
+        {% comment %} <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2677.3319554793447!2d-0.30308622460648244!3d47.8525339709638!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48083900008c5c69%3A0x262597db06552099!2sLa%20Pizzeria!5e0!3m2!1sen!2slb!4v1708612676127!5m2!1sen!2slb"
+          width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+          class="contact-map ">
+        </iframe> {% endcomment %}
+
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d193.54636780004998!2d35.71762987139899!3d33.64044747613586!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151f2767eb15fed5%3A0x418261865a070f05!2smake%20a%20wish!5e1!3m2!1sen!2slb!4v1738495551105!5m2!1sen!2slb"  width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+        class="contact-map "></iframe>
+      </div>
+    </div>
+  
+  
 
 {% endblock main %}
 

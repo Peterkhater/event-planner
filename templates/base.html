@@ -4,11 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}{% endblock title %}</title>
+    <title>{% block title %}Make A Wish | Angelina Art Spot{% endblock title %}</title>
     <link rel="stylesheet" href="{%static 'css/base.css'%}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="keywords" content="event planning, event decoration, Lebanon, wedding planner, birthday parties, special events, event management, professional event services, Make.A.Wish">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Make.A.Wish Event Planning">
+
+    <meta name="description" content="Make.A.Wish offers professional event planning and decoration services in Lebanon. We specialize in creating unforgettable birthday parties, weddings, and special events, tailored to your unique vision and style.">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
@@ -27,7 +33,7 @@
     {% block css %}{% endblock css %}
 </head>
 <body>
-    
+     
   <div class="pl">
     <svg viewBox="0 0 100 100">
       <g fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="6">
@@ -94,8 +100,7 @@
           repeatCount="indefinite" />
       </g>
     </svg>
-</div>
-
+</div> 
 
       <nav class="navbar navbar-expand-custom navbar-mainbg">
         <a class="navbar-brand navbar-logo" href="#"><img src="{%static 'images/logo.png'%}" alt="" height="60px" width="60px"></a>
@@ -106,28 +111,28 @@
             <ul class="navbar-nav ml-auto">
                 <div class="hori-selector"><div class="left"></div><div class="right"></div></div>
                 <li class="nav-item">
-                    <a class="nav-link" href="javascript:void(0);"><i class="fa-solid fa-house"></i> Home</a>
+                    <a class="nav-link" href="{% url "home" %}"><i class="fa-solid fa-house"></i> Home</a>
                 </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="javascript:void(0);"><i class="fa-regular fa-address-card"></i> About Us</a>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url "home" %}#aboutUsId"><i class="fa-regular fa-address-card"></i> About Us</a>
                 </li>
         
                 <li class="nav-item">
-                    <a class="nav-link" href="javascript:void(0);"> <i class="fa-solid fa-rectangle-list"></i> Our Services</a>
+                    <a class="nav-link" href="{% url "home" %}#weDoItAllId"> <i class="fa-solid fa-rectangle-list"></i> Our Services</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="javascript:void(0);"><i class="fa-regular fa-image"></i> Gallery</a>
+                    <a class="nav-link" href="#"><i class="fa-regular fa-image"></i> Gallery</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="javascript:void(0);"><i class="fa-solid fa-square-phone"></i> Contact Us</a>
+                    <a class="nav-link" href="{% url "home" %}#Contact__Us"><i class="fa-solid fa-square-phone"></i> Contact Us</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="javascript:void(0);"><i class="fa-regular fa-circle-play"></i> Start Planning</a>
+                    <a class="nav-link" href="{% url "start_plan" %}"><i class="fa-regular fa-circle-play"></i> Start Planning</a>
                 </li>
             </ul>
         </div>
     </nav>
-    <div class="allContent">
+    <div class="allContent" id="content">
 {% block main %}{% endblock main %}
     </div>
 <footer class="site-footer">

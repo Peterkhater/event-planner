@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/services.css' %}">
+{% endblock css %}
+
+{% block main %}
+<div class="lightbox">
+    <div class="wrapper">
+        <header>
+            <div class="photographer">
+                <i class="fa-solid fa-camera text-center"></i>
+                <span></span>
+            </div>
+            <div class="buttons">
+                <i class="fa-solid fa-download downloadBtnl"></i>
+                <i class="fa-solid fa-x"></i>
+            </div>
+        </header>
+        <div class="preview-img">
+            <div class="img">
+                <img src="" alt="preview-img">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="startPlanningTopImage" style="background-image: url({% static 'images/bg.jpeg' %});">
+    <div class="overlay"></div>
+    <a href="{% url "home" %}" style="text-decoration:none; color:inherit;">
+    <h1 class="startPlanningText">Services Gallery</h1>
+    <p class="text-center" style="color: white; font-size: small;">
+        Home | Gallery</p></a>
+</div>
+<section class="gallery">
+    <ul class="images">
+        {% for image in category_images %}
+            <li class="card">
+                <img src="{{ image.image.url }}" alt="{{ category.name }}"
+                     onclick="showLightBox('{{ image.photoGrapher }}', '{{ image.image.url }}')">
+                <div class="details">
+                    <div class="photographer">
+                        <i class="fa-solid fa-camera text-center"></i>
+                        <span>{{ image.photoGrapher }}</span>
+                    </div>
+                    <button onclick="downloadImg('{{ image.image.url }}')">
+                        <i class="fa-solid fa-download"></i>
+                    </button>
+                </div>
+            </li>
+        {% empty %}
+            <p>No images available for this category.</p>
+        {% endfor %}
+    </ul>
+    <button class="load-more">Load More</button>
+</section>
+
+{% endblock main %}
+
+{% block js %}
+<script src="{% static 'js/services.js' %}" defer></script>
+{% endblock js %}

@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{%static 'css/startPlan.css'%}">
+{% endblock css %}
+{% block main %}
+<div class="startPlanningTopImage" style="background-image: url({% static 'images/bg.jpeg' %});">
+    <div class="overlay"></div>
+    <h1 class="startPlanningText">Start Planning Your Event</h1>
+    <p class="text-center" style="color: white; font-size: small;">Home | Start Planning Now</p>
+</div>
+
+<div class="container mt-5">
+    <h2 class="text-center startPlanTitle">Start Planning Your Event</h2>
+    <p class="text-center startPlanDescription">Be it a themed-birthday for your kid, a lavish wedding, or a private party for your corporate colleagues, you can enjoy it fully only when you’re prepared. Take the hassle out of organizing a extravaganza with Special Events Lebanon – your reliable partner to make your party truly special!</p>
+</div>
+
+<div class="container mt-5">
+    <div class="row">
+        <!-- Form Section -->
+        <div class="col-md-6">
+            <div class="form-container">
+                <h3 class="mb-4">Start Planning Your Event</h3>
+                <form>
+                    <input type="text" class="form-control mb-3" placeholder="Your Name">
+                    <input type="email" class="form-control mb-3" placeholder="Your Email">
+                    <input type="text" class="form-control mb-3" placeholder="Your Phone">
+                    <input type="text" class="form-control mb-3" placeholder="Location">
+                    <input type="text" class="form-control mb-3" placeholder="Subject">
+                    <textarea class="form-control mb-3" placeholder="Message" rows="4"></textarea>
+                    <button type="submit" class="submit-btn">Submit</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Occasion Selection -->
+        <div class="col-md-6">
+            <h3 class="mb-4">What is Your Occasion?</h3>
+            <div class="row g-3">
+                {% for category in category %}
+                <div class="col-4 ">
+                    <div class="occasion-box bg-dark">
+                        <img src="{{category.icon.url}}" alt="{{category.name}}">
+                        <p class="text-light">{{category.name}}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container my-5" style="margin:50px auto;">
+    <div class="special-section">
+        <p class="small-text">Who’s Next?</p>
+        <h2 class="section-title">Let’s Make Your Next Event Special</h2>
+        <p class="section-description">
+            At Special Events, we design unique, elegant, and unforgettable experiences tailored to your vision. Every occasion should be extraordinary, leaving lasting memories for your guests and a cherished experience for you.
+        </p>
+        <div class="button-group">
+            <button class="custom-btn pink-btn">Start Planning Now</button>
+            <button class="custom-btn dark-btn c_b_2">Contact Us</button>
+        </div>
+    </div>
+</div>
+
+{% endblock main %}
