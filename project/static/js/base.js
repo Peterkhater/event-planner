@@ -105,3 +105,70 @@ const getCurrentYear=()=>{
 window.onload=function(){
 	toYear = document.getElementById('toYear').textContent=`-> ${getCurrentYear()} All Rights Reserved by Peter khater`
 }
+
+ScrollReveal().reveal('.goingup', {
+	duration: 500,
+	delay: 100,
+	distance: '50px',
+	origin: 'bottom',
+	opacity: 0,
+	easing: 'ease-in-out',
+	interval: 200,
+	reset: true
+  });
+
+  const canvas = document.getElementById("balloonCanvas");
+  const ctx = canvas.getContext("2d");
+  
+  function resizeCanvas() {
+	  canvas.width = window.innerWidth;
+	  canvas.height = window.innerHeight;
+  }
+  
+//   window.addEventListener("resize", resizeCanvas);
+//   resizeCanvas(); // Initial call
+  
+//   class Balloon {
+// 	  constructor() {
+// 		  this.x = Math.random() * canvas.width;
+// 		  this.y = canvas.height + Math.random() * 200;
+// 		  this.speed = Math.random() * 2 + 1;
+// 		  this.radius = Math.random() * 20 + 15; // Balloon size
+// 		  this.color = `hsl(${Math.random() * 360}, 100%, 70%)`; // Random colors
+// 	  }
+  
+// 	  draw() {
+// 		  ctx.beginPath();
+// 		  ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+// 		  ctx.fillStyle = this.color;
+// 		  ctx.fill();
+// 		  ctx.closePath();
+// 	  }
+  
+// 	  update() {
+// 		  this.y -= this.speed;
+// 		  if (this.y < -50) {
+// 			  this.y = canvas.height + 50; // Reset to bottom when reaching top
+// 			  this.x = Math.random() * canvas.width;
+// 		  }
+// 		  this.draw();
+// 	  }
+//   }
+  
+//   const balloons = [];
+//   for (let i = 0; i < 15; i++) {
+// 	  balloons.push(new Balloon());
+//   }
+  
+//   function animate() {
+// 	  ctx.clearRect(0, 0, canvas.width, canvas.height);
+// 	  balloons.forEach(balloon => balloon.update());
+// 	  requestAnimationFrame(animate);
+//   }
+  
+//   animate();
+
+document.getElementById('startAudioButton').onclick = function() {
+	var audio = document.getElementById('backgroundAudio');
+	audio.play();
+  };

@@ -18,8 +18,8 @@
                 <i class="fa-solid fa-x"></i>
             </div>
         </header>
-        <div class="preview-img">
-            <div class="img">
+        <div class="preview-img mt-0">
+            <div class="img d-flex">
                 <img src="" alt="preview-img">
             </div>
         </div>
@@ -41,7 +41,7 @@
 <section class="gallery">
     <ul class="images">
         {% for image in category_images %}
-            <li class="card">
+            <li class="card goingup">
                 <img src="{{ image.image.url }}" alt="Beautiful {{ category.name }} celebration decor, event setup"
                      onclick="showLightBox('{{ image.photoGrapher }}', '{{ image.image.url }}')">
                 <div class="details">
@@ -52,6 +52,12 @@
                     <button onclick="downloadImg('{{ image.image.url }}')">
                         <i class="fa-solid fa-download"></i>
                     </button>
+                    {% if request.user.is_superuser %}
+                        <a href="{% url 'admin:eventPlanner_categoryimage_change' object_id=image.id %}" class="admin-link">
+                            <button class="admin-button">Go to Admin</button>
+                        </a>
+                    {% endif %}
+
                 </div>
             </li>
         {% empty %}

@@ -14,7 +14,9 @@
     <meta name="author" content="Make.A.Wish Event Planning">
 
     <meta name="description" content="Make.A.Wish offers professional event planning and decoration services in Lebanon. We specialize in creating unforgettable birthday parties, weddings, and special events, tailored to your unique vision and style.">
-
+    {% comment %} <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script> {% endcomment %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
@@ -33,7 +35,7 @@
     {% block css %}{% endblock css %}
 </head>
 <body>
-     
+  
   <div class="pl">
     <svg viewBox="0 0 100 100">
       <g fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="6">
@@ -100,8 +102,12 @@
           repeatCount="indefinite" />
       </g>
     </svg>
-</div> 
-
+</div>
+{% comment %} <button id="startAudioButton" class="leftbtn">Start Audio</button>
+<audio id="backgroundAudio" loop>
+<source src="{%static 'images/audio.mp3'%}" type="audio/mp3">
+  Your browser does not support the audio element.
+</audio> {% endcomment %}
       <nav class="navbar navbar-expand-custom navbar-mainbg p-0">
         <a class="navbar-brand navbar-logo py-0" href="#"><img src="{%static 'images/logo.png'%}" alt="" height="60px" width="60px"></a>
         <button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -195,6 +201,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
+<script src="https://unpkg.com/scrollreveal"></script>
 {% block js %}{% endblock js %}
 </body>
 </html>

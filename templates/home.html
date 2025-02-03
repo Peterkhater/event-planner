@@ -6,6 +6,8 @@
 {% endblock css %}
 
 {% block main %}
+
+<canvas id="balloonCanvas"></canvas>
 <div id="carouselExampleIndicators" class="carousel slide vh-lg-100" data-ride="carousel" data-interval="">
     <div class="carousel-text"><p>Your Special Day<br>
         With Special Events</p><br><br class="d-md-none"><br class="d-md-none"><br class="d-md-none"> <br class="d-md-none"> <br class="d-md-none"> <br class="d-md-none"> <a class="startPlanning" href="{% url "start_plan" %}">Start Planning</a></div>
@@ -27,10 +29,17 @@
     </a>
 </div>
 
+<button id="toggleButton" >Turn Off Balloons</button>
+{% comment %} <button id="startAudioButton" class="leftbtn">Start Audio</button>
+<audio id="backgroundAudio" autoplay loop>
+<source src="{%static 'images/audio.mp3'%}" type="audio/mp3">
+  Your browser does not support the audio element.
+</audio> {% endcomment %}
+
 <div class="container my-5">
     <div class="row rounded-lg shadow-lg" style="border: 2px solid #C3B091;">
   {% for cat in category %}
-  <div class="col-lg-2 col-md-4 col-6">
+  <div class="col-lg-2 col-md-4 col-6 goingup">
     <div class="container eashCateCont">
       <div class="imgcon d-flex justify-content-center align-items-center rounded-circle p-3 mt-2">
         {% if cat.icon and cat.icon.name %}
@@ -79,7 +88,7 @@
         </p>
         <div class="button-group">
             <a href="{% url 'start_plan' %}" style="text-decoration:none; color:inherit;"><button class="custom-btn pink-btn">Start Planning Now</button></a>
-            <button class="custom-btn dark-btn c_b_2">Contact Us</button>
+            <a style="color: inherit; text-decoration: none;" href="https://wa.me/+96179320143"><button class="custom-btn dark-btn c_b_2">Contact Us</button></a>
         </div>
     </div>
 </div>
@@ -121,11 +130,11 @@
 
 <section class="WhatWeDo container mt-5 bg-light">
   <h2 class="WhatWeDo-title text-dark" id="weDoItAllId">We Do It All!</h2>
-  <p class="WhatWeDo-subtitle">Unforgettable events tailored just for you. From concept to execution, we make every detail count.</p>
+  <p class="WhatWeDo-subtitle text-dark">Unforgettable events tailored just for you. From concept to execution, we make every detail count.</p>
   
   <div class="WhatWeDo-grid">
     {% for cat in category %}
-      <a href="{% url 'service' cat.id %}" class="WhatWeDo-card bg-dark">
+      <a href="{% url 'service' cat.id %}" class="WhatWeDo-card bg-dark goingup">
           <img src="{{cat.icon.url}}" alt="{{cat.name}}" class="WhatWeDo-icon">
           <p class="WhatWeDo-text text-light">{{cat.name}}</p>
       </a>
@@ -186,22 +195,13 @@
       </div>
       <!-- Map Section -->
       <div class="col-md-6 p-0">
-        {% comment %} <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2677.3319554793447!2d-0.30308622460648244!3d47.8525339709638!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48083900008c5c69%3A0x262597db06552099!2sLa%20Pizzeria!5e0!3m2!1sen!2slb!4v1708612676127!5m2!1sen!2slb"
-          width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
-          class="contact-map ">
-        </iframe> {% endcomment %}
-
         <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d193.54636780004998!2d35.71762987139899!3d33.64044747613586!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151f2767eb15fed5%3A0x418261865a070f05!2smake%20a%20wish!5e1!3m2!1sen!2slb!4v1738495551105!5m2!1sen!2slb"  width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
         class="contact-map "></iframe>
       </div>
     </div>
-  
-  
 
 {% endblock main %}
 
 {%block js%}
 <script src="{%static 'js/home.js'%}"></script>
-
 {%endblock js%}

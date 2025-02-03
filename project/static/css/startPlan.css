@@ -225,3 +225,36 @@
     }
     
 }
+
+.occasion-box {
+    display: block;
+    padding: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.occasion-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.occasion-box img {
+    max-width: 50px;
+    margin-bottom: 10px;
+}
+
+.occasion-box p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+input[type="radio"]:checked + img,
+input[type="radio"]:checked + p {
+    transform: scale(1.1);
+    color: #ffc107;
+}
+
+input[type="radio"] {
+    display: none; /* Completely hides the radio button */
+}

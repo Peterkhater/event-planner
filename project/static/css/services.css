@@ -170,6 +170,7 @@ i{
 
 .wrappe .preview-img .img{
 max-height: 65%;
+height: 100%;
 max-width: 90vh;
 }
 
@@ -183,7 +184,7 @@ height: 100%;
 .preview-img .img img{
     max-width: 100%;
     object-fit: contain;
-    height: 100%;
+    height: 90%;
     width: 100%;
 }
 
@@ -217,3 +218,51 @@ header .buttons i{
     margin-left: 10px;
     background: #6c757d;
 }
+
+
+/* Admin button style */
+.admin-link {
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.admin-button {
+    background-color: #007bff !important;
+    color: white !important;
+    border: none !important;
+    padding: 12px 24px !important;
+    font-size: 16px !important;
+    font-weight: bold !important;
+    text-align: center !important;
+    text-decoration: none !important;
+    border-radius: 8px !important;
+    transition: background-color 0.3s ease, transform 0.2s ease !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
+    cursor: pointer !important;
+}
+
+/* Hover effect */
+.admin-button:hover {
+    background-color: #0056b3 !important;
+    transform: translateY(-3px) !important;
+}
+
+/* Active state */
+.admin-button:active {
+    transform: translateY(1px) !important;
+}
+
+/* Focus state for accessibility */
+.admin-button:focus {
+    outline: 3px solid #0056b3 !important;
+    outline-offset: 4px !important;
+}
+
+/* Small screen responsiveness */
+@media (max-width: 768px) {
+    .admin-button {
+        padding: 10px 20px !important;
+        font-size: 14px !important;
+    }
+}
+
