@@ -266,3 +266,31 @@ header .buttons i{
     }
 }
 
+
+.goback{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    text-decoration: none;
+    border: none;
+    padding: 15px;
+    border-radius: 20px;
+    background-color: #9b9e9f;
+    color: white;
+    font-family: "Dancing Script", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    animation: alternate-reverse;
+    transition: 1s;
+    border: 5px double red;
+    z-index: 100000;
+}
+.goback:hover{
+    opacity: 1;
+    text-decoration: none;
+    background-color: #d2d4d4;
+    color: #333;
+    transition: 1s;
+    border:7px double red;
+}
