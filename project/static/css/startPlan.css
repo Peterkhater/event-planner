@@ -254,7 +254,14 @@ input[type="radio"]:checked + p {
     transform: scale(1.1);
     color: #ffc107;
 }
+input[type="radio"]:checked{
+    border: 2px solid red;
+}
 
 input[type="radio"] {
     display: none; /* Completely hides the radio button */
+}
+
+.occasion-box.selected {
+    border: 5px dashed red;
 }
