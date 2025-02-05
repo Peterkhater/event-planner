@@ -6,10 +6,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure-+v=1g*!kn5xj6aurw9j1d4%_e@64rz2&6r0d6#tmdch6a1bv4w'
 
-DEBUG = True
-
-ALLOWED_HOSTS = ['192.168.1.26']
-
+# DEBUG = True
+DEBUG = False
+ALLOWED_HOSTS = ['Makewish.pythonanywhere.com',]
 
 
 INSTALLED_APPS = [
@@ -51,7 +50,8 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'project.wsgi.application'
-
+MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'
 
 DATABASES = {
     'default': {

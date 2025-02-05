@@ -449,13 +449,15 @@
   }
 
   .video2Container{
-    height:80vh;
+    height:100%;
+    width: 100%;
   }
 
   .video2{
     height: 100%;  
-    border:5px solid #C3B091; 
-    object-fit: cover;
+    /* border:5px solid #C3B091;  */
+    object-fit:contain;
+    width: 100%;
   }
 
   .whatWeDoSection{
